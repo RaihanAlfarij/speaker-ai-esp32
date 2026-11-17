@@ -1,0 +1,38 @@
+# --- Rahasia / kunci API (JANGAN di-commit) ---
+.env
+*.env
+**/.config.yaml
+**/secrets.*
+**/*.secret
+
+# --- ESP-IDF / build ---
+build/
+sdkconfig.old
+managed_components/
+dependencies.lock
+*.bin
+*.elf
+*.map
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Media konten mentah (terlalu besar untuk git) ---
+content/**/raw/
+*.mp4
+*.mov
+*.MOV
+*.wav
+*.psd
+*.prproj
+
+# --- Editor / OS ---
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

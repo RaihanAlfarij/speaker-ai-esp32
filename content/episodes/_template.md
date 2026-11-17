@@ -1,31 +1,25 @@
-# Ep XX — Judul
+# Milestone Ep XX — Judul (carousel)
 
-- **Fase teknis:** 
-- **Tanggal rekam / tayang:** 
-- **Status:** ⬜ naskah · ⬜ rekam · ⬜ edit · ⬜ tayang
+- **Fase teknis / milestone:** 
+- **Tanggal tayang:** 
+- **Status:** ⬜ draf · ⬜ desain slide · ⬜ posting (IG feed / Threads)
 
-## Reels (30–60 detik, 9:16)
-**Hook (0–3 detik):** 
-
-| Detik | Shot | VO / teks layar |
-|---|---|---|
-| 0–3 | | |
-| 3–15 | | |
-| 15–45 | | |
-| 45–60 | CTA | |
+## Carousel (4:5, 1080×1350)
+| Slide | Judul | Isi | Visual (foto/footage dari vlog) |
+|---|---|---|---|
+| 1 | (cover) | | |
+| 2 | | | |
+| 3 | | | |
+| … | | | |
+| Akhir | CTA | Ikuti progresnya / tanya di komentar | |
 
 **Caption:** 
 
 **Hashtag:** 
 
-## Carousel (4:5)
-| Slide | Judul | Isi |
-|---|---|---|
-| 1 | (cover) | |
-| 2 | | |
-| 3 | | |
-| … | | |
-| Akhir | CTA | |
+## Reels pendamping (opsional)
+Pakai klip terbaik dari vlog hari terkait: 
 
 ## Catatan
 - Atribusi: firmware berbasis xiaozhi-esp32 (MIT)
+- [ ] Cek privasi (tidak ada password/API key/email)

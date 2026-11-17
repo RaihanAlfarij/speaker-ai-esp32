@@ -4,6 +4,12 @@ Catat progres di sini (terbaru di atas). Format bebas, tapi usahakan: apa yang d
 
 ---
 
+## 2026-11-17 (sore) — Keputusan konten & firmware fork
+- xiaozhi-esp32 di-fork ke `RaihanAlfarij/xiaozhi-esp32`, dipasang sebagai submodule `firmware/xiaozhi-esp32` (branch kerja `speaker-ai`, remote `upstream` ke repo asli).
+- Konten: **daily build vlog "Hari ke-N"** + carousel milestone; tutorial YouTube dibuat dari rakitan kedua setelah v1 jadi (keputusan 0005).
+- Alat konten siap: 2 HP, 1 tripod, 1 holder meja.
+- **Berikutnya:** rekam Hari 1 (knolling komponen & alat) dan Hari 2 (setup proyek dengan Claude), lalu mulai fase 1.
+
 ## 2026-11-17 — Fase 0: persiapan
 - Komponen inti sudah ada: ESP32-S3-N16R8, INMP441 ×2, MAX98357A ×3, speaker 4 Ω 5–10 W ×2, OLED 1,3" SH1106, ring WS2812B 16, touch TTP223 ×2, IP2312 ×2, MT3608 ×2, BMS 1S ×3.
 - Diputuskan: firmware base xiaozhi-esp32, server AI self-hosted, BT ditunda, lisensi MIT.

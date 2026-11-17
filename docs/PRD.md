@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Pemilik** | Raihan (Hardware Engineer) |
-| **Status** | Draft v0.1 — fase 0 (komponen sudah lengkap, belum dirakit) |
+| **Status** | Draft v0.2 — fase 0 (komponen sudah lengkap, belum dirakit) |
 | **Tanggal** | 17 November 2026 |
 | **Repo** | `speaker-ai-esp32` (lisensi MIT) |
 
@@ -78,7 +78,7 @@ Prinsip: **biaya bulanan seminimal mungkin**, setiap fase menghasilkan sesuatu y
 
 ### 6.1 Lapis perangkat — firmware
 - Base: **xiaozhi-esp32** (MIT), board profile `bread-compact-wifi`, OLED **SH1106 128×64**.
-- Repo firmware = **fork xiaozhi-esp32** di GitHub, dipasang sebagai git submodule di `firmware/`.
+- Repo firmware = fork **`RaihanAlfarij/xiaozhi-esp32`**, dipasang sebagai git submodule `firmware/xiaozhi-esp32` (branch kerja `speaker-ai`, remote `upstream` → repo asli).
 - Modifikasi rencana: ring WS2812 (status), 2 sensor touch (talk & volume tap/hold), UI OLED versi sendiri, bahasa default, server URL ke server sendiri.
 - Toolchain: ESP-IDF ≥ 5.4 (VS Code + ekstensi ESP-IDF).
 
@@ -130,7 +130,7 @@ Mono: 1 driver 4 Ω + passive radiator (dari speaker BT bekas atau beli). Box te
 
 ## 8. Roadmap
 
-| Fase | Isi | Tanda selesai | Episode konten |
+| Fase | Isi | Tanda selesai | Milestone carousel |
 |---|---|---|---|
 | **0** | Persiapan: komponen, repo, PRD | Repo & PRD ada di GitHub | Ep 1–2 |
 | **1** | Rakit breadboard + flash firmware siap pakai xiaozhi + server resmi xiaozhi.me | Bisa ngobrol dengan AI | Ep 5–6 |
@@ -139,6 +139,7 @@ Mono: 1 driver 4 Ω + passive radiator (dari speaker BT bekas atau beli). Box te
 | **4** | Plugin: musik (YouTube, Spotify) + IoT (MQTT, HA/MCP) | "Putar lagu X", "nyalakan lampu" jalan | Ep 10–11 |
 | **5** | Daya portable + box akustik + casing 3D | Unit portable utuh | Ep 3–4, 9 |
 | **6** | Finishing, uji harian, rilis open-source | Rilis v1.0 di GitHub | Ep 12 |
+| **7** | Rakitan kedua untuk tutorial YouTube (jalur C) | Video tutorial tayang | Tutorial |
 | Nanti | Bluetooth out, PCB custom, DSP/EQ hardware, kit & produk | — | — |
 
 Progres harian dicatat di [`docs/devlog.md`](devlog.md).
@@ -146,9 +147,36 @@ Progres harian dicatat di [`docs/devlog.md`](devlog.md).
 ## 9. Rencana konten
 
 - **Judul seri:** "Bikin Speaker AI dari Nol" — hardware rakit sendiri, firmware open-source yang dimodifikasi (atribusi xiaozhi disebut).
-- **Format per episode:** 1 Reels (9:16, 1080×1920, 30–60 detik → juga Shorts & TikTok) + 1 carousel (4:5, 1080×1350 → juga Threads).
-- Reels = proses & momen "wow"; carousel = ilmu (skema, komponen, tips).
-- **Aturan produksi:** rekam semua proses termasuk kegagalan (B-roll).
+- **Gaya:** *daily tech vlog* / build in public — posting apa adanya setiap ada progres, konsisten, minim usaha, kegagalan ikut ditampilkan.
+
+### 9.1 Tiga jalur konten
+
+| Jalur | Kapan | Platform | Usaha |
+|---|---|---|---|
+| **A. Daily build vlog** ("Hari ke-N") | Setiap sesi kerja | IG Reels → YouTube Shorts → TikTok (9:16, 30–60 dtk) | Minim — konten utama |
+| **B. Carousel milestone** | Saat milestone tercapai | IG feed → Threads (4:5, 1080×1350) | Sedang — ilmu & rangkuman |
+| **C. Tutorial YouTube** | Setelah v1 jadi | YouTube (16:9, panjang) | Tinggi — dari **rakitan kedua** yang mulus |
+
+- "Hari ke-N" dihitung **per sesi kerja**, bukan per tanggal kalender (tidak wajib upload tiap hari).
+- Tutorial tidak direkam dari rakitan pertama (banyak jalan buntu). Rakitan kedua sekaligus menguji bahwa panduan bisa diikuti orang lain (bekal open-source & kit) dan menghasilkan unit kedua.
+- Footage terbaik dari jalur A dipakai ulang sebagai B-roll jalur B & C.
+
+### 9.2 Produksi
+- **HP 1 (tripod):** tampak atas meja, horizontal 4K, posisi tetap, rekam terus tiap sesi.
+- **HP 2 (holder meja):** close-up 30–45° atau wajah, vertikal 9:16, dipindah hanya untuk momen kunci.
+- **Laptop:** rekam layar (Win+Alt+R / OBS), zoom 125–150 %.
+- Tepuk tangan di awal (sinkron) dan di momen penting (penanda).
+- Edit: CapCut, auto-caption, musik dari pustaka platform.
+- **Privasi sebelum posting:** jangan tampilkan password WiFi, API key, `.config.yaml`, email pribadi.
+- Detail lengkap: [`content/plan.md`](../content/plan.md).
+
+### 9.3 Vlog awal (sebelum merakit)
+| Hari | Isi |
+|---|---|
+| 1 | Persiapan: komponen & alat disusun rapi di meja (knolling, tampak atas) |
+| 2 | Setup proyek dengan bantuan Claude: PRD, folder, GitHub (rekam layar) |
+
+### 9.4 Milestone carousel (jalur B)
 
 | Ep | Topik | Hook Reels | Isi carousel |
 |---|---|---|---|
@@ -194,11 +222,13 @@ Lihat [`docs/decisions/`](decisions/).
 4. Bluetooth ke speaker lain ditunda
 5. Hardware dari nol, firmware dari base open-source yang dimodifikasi
 6. Lisensi MIT
+7. Konten: daily build vlog + carousel milestone; tutorial YouTube dari rakitan kedua
 
 ## 13. Pertanyaan terbuka
 
 - [ ] Nama/persona asisten (wake word custom?) — juga untuk branding konten
-- [ ] Gaya konten: tampil muka / voice-over / teks; frekuensi upload
+- [x] ~~Gaya konten~~ → daily build vlog, upload tiap ada progres (keputusan 7)
+- [ ] Tampil muka atau tidak; voice-over atau teks saja
 - [ ] Server di mana: PC rumah, STB, atau VPS
 - [ ] LLM utama (Gemini Flash vs alternatif) & perlu mode "thinking"?
 - [ ] Driver final: speaker 4 Ω yang ada vs Dayton DMA45-4 + passive radiator
